@@ -1,13 +1,33 @@
 {
-  "orgName": "Securex Gaming",
-  "edition": "Developer",
-  "features": ["EnableSetPasswordInApi"],
+  "orgName": "Dunder Mifflin",
+  "edition": "Enterprise",
+  "username": "admin1@dunder-mifflin.com",
+  "features": [
+    "AuthorApex",
+    "ServiceCloud",   
+    "ServiceUser",      
+    "DevelopmentWave", 
+    "CodeBuilder",     
+    "RecordTypes",  
+    "AddCustomApps:5",        
+    "AddCustomObjects:5",        
+    "ForceComPlatform",     
+    "MultiCurrency"         
+  ],
   "settings": {
-    "lightningExperienceSettings": {
-      "enableS1DesktopEnabled": true
+    "orgPreferenceSettings": {
+      "s1DesktopEnabled": true,      
+      "chatterEnabled": true,        
+      "caseAssignmentRulesEnabled": true,  
+      "defaultWorkflowUser": "User", 
+      "multiCurrencyEnabled": false  
     },
-    "mobileSettings": {
-      "enableS1EncryptedStoragePref2": false
-    }
-  }
+    "userManagementSettings": {
+      "enableLicensing": true 
+    },
+    "devHubSettings": {
+            "enableDevOpsCenterGA": true
+            }  
+  },
+  "hasSampleData": false
 }
