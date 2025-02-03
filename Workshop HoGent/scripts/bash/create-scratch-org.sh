@@ -1,0 +1,1 @@
+sf org create scratch --definition-file config/project-scratch-def.json --admin-email services@securex.be --duration-days 30
