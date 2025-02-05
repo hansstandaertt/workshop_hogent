@@ -2,14 +2,14 @@ public with sharing class SaleManager {
     private List<Sale__c> recordList = new List<Sale__c>();
     private Map<Id, Sale__c> oldValueMap = new Map<Id, Sale__c>();
 
-    public SaleManager(List<Sale__c> recordList, Map<Id, Sale__c> oldValueMap) {
-        this.recordList = recordList;
-        this.oldValueMap = oldValueMap;
-    }
-
     public SaleManager(List<Sale__c> recordList) {
         this.recordList = recordList;
         setUniqueSaleNumber();
+    }
+
+    public SaleManager(List<Sale__c> recordList, Map<Id, Sale__c> oldValueMap) {
+        this(recordList);
+        this.oldValueMap = oldValueMap;
     }
 
     // Methods

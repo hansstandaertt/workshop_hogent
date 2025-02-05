@@ -3,16 +3,15 @@ public with sharing class CaseManager {
     private Map<Id, Case> oldValueMap = new Map<Id, Case>();
     private CaseRepository caseRepository;
 
-    public CaseManager(List<Case> recordList, Map<Id, Case> oldValueMap) {
-        this.recordList = recordList;
-        this.oldValueMap = oldValueMap;
-        this.CaseRepository = new CaseRepository();
-    }
-
     public CaseManager(List<Case> recordList) {
         this.recordList = recordList;
         this.CaseRepository = new CaseRepository();
         addSaleToCase();
+    }
+
+    public CaseManager(List<Case> recordList, Map<Id, Case> oldValueMap) {
+        this(recordList);
+        this.oldValueMap = oldValueMap;
     }
 
     private void addSaleToCase() {
