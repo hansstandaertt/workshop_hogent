@@ -15,10 +15,13 @@
     <label>Dunder Mifflin</label>
     <navType>Standard</navType>
     <tabs>standard-Account</tabs>
-    <tabs>standard-Case</tabs>
     <tabs>standard-Contact</tabs>
-    <tabs>standard-Opportunity</tabs>
+    <tabs>standard-Case</tabs>
     <tabs>Paper__c</tabs>
+    <tabs>Hardware__c</tabs>
+    <tabs>standard-Opportunity</tabs>
+    <tabs>standard-Product2</tabs>
+    <tabs>Sales__c</tabs>
     <uiType>Lightning</uiType>
     <utilityBar>Dunder_Mifflin_UtilityBar</utilityBar>
 </CustomApplication>

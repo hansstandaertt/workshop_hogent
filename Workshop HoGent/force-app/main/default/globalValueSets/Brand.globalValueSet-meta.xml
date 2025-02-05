@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>HP</fullName>
+        <default>false</default>
+        <label>HP</label>
+    </customValue>
+    <customValue>
+        <fullName>Canon</fullName>
+        <default>false</default>
+        <label>Canon</label>
+    </customValue>
+    <customValue>
+        <fullName>Epson</fullName>
+        <default>false</default>
+        <label>Epson</label>
+    </customValue>
+    <customValue>
+        <fullName>Brother</fullName>
+        <default>false</default>
+        <label>Brother</label>
+    </customValue>
+    <masterLabel>Brand</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>
