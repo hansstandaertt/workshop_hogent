@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>EnoughInStock</fullName>
+    <active>true</active>
+    <errorConditionFormula>IF(
+  NOT(ISBLANK(Hardware__c)), 
+  Hardware__r.Stock__c &lt; Quantity__c, 
+  Paper__r.Stock__c &lt; Quantity__c
+)</errorConditionFormula>
+    <errorMessage>There is not enough stock to enter this order. Please check the quantity.</errorMessage>
+</ValidationRule>
