@@ -1,12 +1,15 @@
 public with sharing class SaleTriggerHandler extends AbstractTriggerHandler{
+    
+    SaleManager saleManager;
     public SaleTriggerHandler(List<Sale__c> recordList, Map<Id, Sale__c> oldValueMap) {
         super(recordList, oldValueMap);
+        SaleManager saleManager = new SaleManager(recordList, oldValueMap);
         execute();
     }
 
     public override void beforeInsert() {
         System.debug(LoggingLevel.INFO, 'Before Insert');
-        SaleManager saleManager = new SaleManager(recordList);
+        saleManager.beforeInsert();
     }
     public override void beforeUpdate() {
         System.debug(LoggingLevel.INFO, 'Before Update');

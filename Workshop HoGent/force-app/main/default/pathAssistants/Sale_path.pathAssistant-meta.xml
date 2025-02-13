@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PathAssistant xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <entityName>Sale__c</entityName>
+    <fieldName>Status__c</fieldName>
+    <masterLabel>Sale path</masterLabel>
+    <pathAssistantSteps>
+        <fieldNames>Unique_Sale_Number__c</fieldNames>
+        <fieldNames>Total_Sale_Price__c</fieldNames>
+        <fieldNames>CurrencyIsoCode</fieldNames>
+        <picklistValueName>Closed</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <fieldNames>Unique_Sale_Number__c</fieldNames>
+        <fieldNames>Total_Sale_Price__c</fieldNames>
+        <fieldNames>CurrencyIsoCode</fieldNames>
+        <picklistValueName>Open</picklistValueName>
+    </pathAssistantSteps>
+    <recordTypeName>__MASTER__</recordTypeName>
+</PathAssistant>

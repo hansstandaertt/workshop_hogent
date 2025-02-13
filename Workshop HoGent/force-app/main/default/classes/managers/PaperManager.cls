@@ -3,14 +3,17 @@ public with sharing class PaperManager {
     private List<Paper__c> recordList = new List<Paper__c>();
     private Map<Id, Paper__c> oldValueMap = new Map<Id, Paper__c>();
 
-    public PaperManager(List<Paper__c> recordList) {
+    public PaperManager(List<Paper__c> recordList, Map<Id, Paper__c> oldValueMap) {
         this.recordList = recordList;
+        this.oldValueMap = oldValueMap;
+    }
+
+    public void beforeInsert() {
         setPaperNameField();
     }
-    
-    public PaperManager(List<Paper__c> recordList, Map<Id, Paper__c> oldValueMap) {
-        this(recordList);
-        this.oldValueMap = oldValueMap;
+
+    public void beforeUpdate() {
+        
     }
 
 
