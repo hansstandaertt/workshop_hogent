@@ -10,14 +10,14 @@
         <valueSetDefinition>
             <sorted>false</sorted>
             <value>
-                <fullName>White,</fullName>
+                <fullName>White</fullName>
                 <default>true</default>
-                <label>White,</label>
+                <label>White</label>
             </value>
             <value>
-                <fullName>Red,</fullName>
+                <fullName>Red</fullName>
                 <default>false</default>
-                <label>Red,</label>
+                <label>Red</label>
             </value>
             <value>
                 <fullName>Green</fullName>
@@ -25,14 +25,14 @@
                 <label>Green</label>
             </value>
             <value>
-                <fullName>Blue,</fullName>
+                <fullName>Blue</fullName>
                 <default>false</default>
-                <label>Blue,</label>
+                <label>Blue</label>
             </value>
             <value>
-                <fullName>Orange,</fullName>
+                <fullName>Orange</fullName>
                 <default>false</default>
-                <label>Orange,</label>
+                <label>Orange</label>
             </value>
             <value>
                 <fullName>Yellow</fullName>
