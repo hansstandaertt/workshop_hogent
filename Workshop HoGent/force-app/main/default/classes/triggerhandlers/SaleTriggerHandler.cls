@@ -3,7 +3,7 @@ public with sharing class SaleTriggerHandler extends AbstractTriggerHandler{
     SaleManager saleManager;
     public SaleTriggerHandler(List<Sale__c> recordList, Map<Id, Sale__c> oldValueMap) {
         super(recordList, oldValueMap);
-        SaleManager saleManager = new SaleManager(recordList, oldValueMap);
+        saleManager = new SaleManager(recordList, oldValueMap);
         execute();
     }
 
@@ -19,5 +19,6 @@ public with sharing class SaleTriggerHandler extends AbstractTriggerHandler{
     }
     public override void afterUpdate() {
         System.debug(LoggingLevel.INFO, 'After Update');
+        saleManager.afterUpdate();
     }
 }

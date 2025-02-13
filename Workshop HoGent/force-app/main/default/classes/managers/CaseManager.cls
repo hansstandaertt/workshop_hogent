@@ -42,6 +42,7 @@ public with sharing class CaseManager {
     private void closeCaseOnCaseResolution() {
         // Your code here
     }
+
     
 
     
