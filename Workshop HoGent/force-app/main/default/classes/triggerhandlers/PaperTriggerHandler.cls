@@ -1,12 +1,14 @@
 public with sharing class PaperTriggerHandler extends AbstractTriggerHandler{
+    PaperManager paperManager;
     public PaperTriggerHandler(List<Paper__c> recordList, Map<Id, Paper__c> oldValueMap) {
         super(recordList, oldValueMap);
+        paperManager = new PaperManager(recordList);
         execute();
     }
 
     public override void beforeInsert() {
         System.debug(LoggingLevel.INFO, 'Before Insert');
-        PaperManager paperManager = new PaperManager(recordList);
+        paperManager.beforeInsert();
     }
     public override void beforeUpdate() {
         System.debug(LoggingLevel.INFO, 'Before Update');

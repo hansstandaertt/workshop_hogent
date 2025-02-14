@@ -126,6 +126,12 @@
         </rules>
     </decisions>
     <environments>Default</environments>
+    <formulas>
+        <name>CalculateTotalPrice</name>
+        <dataType>Currency</dataType>
+        <expression>{!Get_Sale.Total_Sale_Price__c} + {!SaleItem.Total_Price__c}</expression>
+        <scale>2</scale>
+    </formulas>
     <interviewLabel>Add Products To Sale {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Add Products To Sale</label>
     <processMetadataValues>
@@ -153,7 +159,7 @@
         <locationX>182</locationX>
         <locationY>974</locationY>
         <connector>
-            <targetReference>Success_Screen</targetReference>
+            <targetReference>Update_Sale</targetReference>
         </connector>
         <inputReference>SaleItem</inputReference>
     </recordCreates>
@@ -220,6 +226,30 @@
         <object>Sale__c</object>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
+    <recordUpdates>
+        <name>Update_Sale</name>
+        <label>Update Sale</label>
+        <locationX>182</locationX>
+        <locationY>1082</locationY>
+        <connector>
+            <targetReference>Success_Screen</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>Get_Sale.Id</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Total_Sale_Price__c</field>
+            <value>
+                <elementReference>CalculateTotalPrice</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Sale__c</object>
+    </recordUpdates>
     <screens>
         <name>Add_Items_To_Sale_Screen</name>
         <label>Add Items To Sale Screen</label>
@@ -423,7 +453,7 @@
         <name>Success_Screen</name>
         <label>Success Screen</label>
         <locationX>182</locationX>
-        <locationY>1082</locationY>
+        <locationY>1190</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>true</allowPause>

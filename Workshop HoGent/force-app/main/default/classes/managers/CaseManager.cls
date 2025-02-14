@@ -3,17 +3,20 @@ public with sharing class CaseManager {
     private Map<Id, Case> oldValueMap = new Map<Id, Case>();
     private CaseRepository caseRepository;
 
-    public CaseManager(List<Case> recordList) {
+    public CaseManager(List<Case> recordList, Map<Id, Case> oldValueMap) {
         this.recordList = recordList;
+        this.oldValueMap = oldValueMap;
         this.CaseRepository = new CaseRepository();
+    }
+
+    public void beforeInsert() {
         addSaleToCase();
     }
 
-    public CaseManager(List<Case> recordList, Map<Id, Case> oldValueMap) {
-        this(recordList);
-        this.oldValueMap = oldValueMap;
+    public void beforeUpdate() {
+        // Your method here
     }
-
+    
     private void addSaleToCase() {
         for (Case c: recordList) {
             String textToSearch = c.Subject + c.Description;
@@ -26,15 +29,22 @@ public with sharing class CaseManager {
 
     private String getUUIDFromEmail(String textToSearch) {
         String stringToReturn = '';
-        String uuidPattern = '\\b[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}\\b';
+        String uuidPattern = '[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}';
         Pattern regexPattern = Pattern.compile(uuidPattern);
         Matcher matcher = regexPattern.matcher(textToSearch);
-
         if (matcher.find()) {
             stringToReturn = matcher.group(0);
         }
 
         return stringToReturn;
     }
+
+    private void closeCaseOnCaseResolution() {
+        // Your code here
+    }
+
+    
+
+    
 
 }
