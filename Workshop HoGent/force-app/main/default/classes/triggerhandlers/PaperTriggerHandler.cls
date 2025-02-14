@@ -2,7 +2,7 @@ public with sharing class PaperTriggerHandler extends AbstractTriggerHandler{
     PaperManager paperManager;
     public PaperTriggerHandler(List<Paper__c> recordList, Map<Id, Paper__c> oldValueMap) {
         super(recordList, oldValueMap);
-        paperManager = new PaperManager(recordList);
+        paperManager = new PaperManager(recordList, oldValueMap);
         execute();
     }
 
